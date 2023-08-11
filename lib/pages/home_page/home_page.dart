@@ -14,11 +14,11 @@ class HomePage extends ConsumerWidget {
     final currentTabIndex = ref.watch(currentTabProvider);
 
     return Scaffold(
-        appBar: const CustomAppBar(title: 'TEST'),
+        appBar: const CustomAppBar(title: 'Reddit News'),
         body: <Widget>[
           const FeedPage(),
           const SearchPage(),
-        ][0],
+        ][currentTabIndex],
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) {
             ref.read(currentTabProvider.notifier).state = index;
@@ -27,11 +27,11 @@ class HomePage extends ConsumerWidget {
           destinations: const <Widget>[
             NavigationDestination(
               icon: Icon(Icons.newspaper),
-              label: 'Новости',
+              label: 'News',
             ),
             NavigationDestination(
               icon: Icon(Icons.search),
-              label: 'Поиск',
+              label: 'Search',
             ),
           ],
         ));
