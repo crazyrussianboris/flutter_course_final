@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course_final/components/loader.dart';
 import 'package:flutter_course_final/pages/feed_page/widgets/pull_to_refresh_wrapper.dart';
 import 'package:flutter_course_final/providers/feed_controller/feed_controller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,10 +16,6 @@ class FeedPage extends ConsumerWidget {
         error: (error, stack) => Container(
             padding: const EdgeInsets.all(20.0),
             child: Center(child: Text(error.toString()))),
-        loading: () => Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            alignment: Alignment.center,
-            child: const CircularProgressIndicator()));
+        loading: () => const Loader());
   }
 }

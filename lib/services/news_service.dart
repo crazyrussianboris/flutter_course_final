@@ -17,4 +17,24 @@ class NewsService {
 
     return getIt<NewsUtils>().formatNewsResponse(response);
   }
+
+  Future<Map<String, News>> searchNews(String searchTerm) async {
+    final dio = Dio();
+    final getIt = GetIt.instance;
+
+    final Response response = await dio.get('http://www.reddit.com/search.json',
+        queryParameters: {'q': searchTerm});
+
+    if (response.statusCode != 200) {
+      throw Exception('По вашему запросу ничего не найдено');
+    }
+
+    final result = getIt<NewsUtils>().formatNewsResponse(response);
+
+    if (result.isEmpty) {
+      throw Exception('По вашему запросу ничего не найдено');
+    }
+
+    return result;
+  }
 }

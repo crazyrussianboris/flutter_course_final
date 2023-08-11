@@ -8,9 +8,8 @@ class NewsCardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return thumbnail == 'self'
-        ? const IamgePlaceholder()
-        : CachedNetworkImage(
+    return thumbnail.startsWith('https://')
+        ? CachedNetworkImage(
             imageUrl: thumbnail,
             width: MediaQuery.of(context).size.width,
             height: 200,
@@ -22,6 +21,7 @@ class NewsCardImage extends StatelessWidget {
             ),
             placeholder: (context, url) => const IamgePlaceholder(),
             errorWidget: (context, url, error) => const Icon(Icons.error),
-          );
+          )
+        : const IamgePlaceholder();
   }
 }

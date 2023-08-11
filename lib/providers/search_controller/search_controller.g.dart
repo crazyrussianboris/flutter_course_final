@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'feed_controller.dart';
+part of 'search_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$feedControllerHash() => r'f2215a7bfa549b965a3cc22860fd9aefefc71fd7';
+String _$searchControllerHash() => r'0c535e991c559748c9385dfbc2ab1c3e3f09341a';
 
-/// See also [FeedController].
-@ProviderFor(FeedController)
-final feedControllerProvider = AutoDisposeAsyncNotifierProvider<FeedController,
-    Map<String, News>>.internal(
-  FeedController.new,
-  name: r'feedControllerProvider',
+/// See also [SearchController].
+@ProviderFor(SearchController)
+final searchControllerProvider = AutoDisposeAsyncNotifierProvider<
+    SearchController, Map<String, News>>.internal(
+  SearchController.new,
+  name: r'searchControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$feedControllerHash,
+      : _$searchControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$FeedController = AutoDisposeAsyncNotifier<Map<String, News>>;
+typedef _$SearchController = AutoDisposeAsyncNotifier<Map<String, News>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member
